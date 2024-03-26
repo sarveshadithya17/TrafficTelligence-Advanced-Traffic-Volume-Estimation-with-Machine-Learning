@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Volume Estimation</title>
+    <style>
+        body{
+            color:white
+            }
+        h1{
+            color:white
+            }
+        label{
+            font-weight:bold;
+            }
+    </style>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='homepage_image.jpg') }}');">
+ <div class="Login">
+     <centre><h1>Traffic Volume Estimation</h1></centre>
+     <!-- Main Input For Receiving Query to out ML -->
+     <form action="{{ url_for('predict')}}"method="post">
+<h1>Please enter the following details</h1>
+
+
+</head>
+
+    <label>Temp:</label>
+    <input type="number" name="temp" placeholder="temp " required="required" /></br>
+    
+<br>
+    <label>Rain:</label>
+    <input type="number" min="0" max="1" name="rain " placeholder="rain" required="required" /><br>
+<br>
+    <label>Snow:</label>
+    <input type="number" min="0" max="1" name="snow " placeholder="snow " required="required" /><br>
+<br>
+    <label>Day:</label>
+    <input type="number" min="1" max="31" name="day " placeholder="day " required="required" /><br>
+<br>
+    <label>Month:</label>
+    <input type="number" main="1" max="12" name="month " placeholder="month " required="required" /><br>
+<br>
+    <label>Year:</label>
+    <input type="number" min="2012" max="2099" name="year " placeholder="year " required="required" /><br>
+<br>
+    <label>Hours:</label>
+    <input type="number" min="0" max"24" name="hours " placeholder="hours " required="required" /><br>
+<br>
+    <label>Minutes:</label>
+    <input type="number" min="0" max="60" name="minutes " placeholder="minutes " required="required" /><br>
+<br>
+    <label>Seconds:</la<label>
+    <input type="number" min="0" max="60" name="seconds " placeholder="seconds " required="required" /><br>
+<br>
+    <label for="weather_v2">Weather:</label>
+        <select id="weather_v2" name="weather_v2">
+            <option value=0>Clouds</option>
+            <option value=1>Clear</option>
+            <option value=3>Rain</option>
+            <option value=6>Drizzle</option>
+            <option value=4>Mist</option>
+            <option value=5>Haze</option>
+            <option value=2>Fog</option>
+            <option value=7>Thunderstorm</option>
+            <option value=8>snow</option>
+            <option value=9>Squall</option>
+            <option value=10>Smoke</option>
+        </select> &nbsp;&nbsp:<br>
+<br>
+    <label for="holiday_v2">Holiday:</label>
+        <select id="holiday_v2" name="holiday_v2">
+            <option value=5>None</option>
+            <option value=1>Columbus Day</option>
+            <option value=3>Veterans Day</option>
+            <option value=8>Thanksgiving Day</option>
+            <option value=7>Christmas Day</option>
+            <option value=11>New Year's Day</option>
+            <option value=4>Washington's Birthday</option>
+            <option value=6>Memorial Day</option>
+            <option value=10>Independence Day</option>
+            <option value=2>State Fair</option>
+            <option value=9>Labour Day</option>
+            <option value=0>Martin Luthur King Jr Day</option>
+        </select> &nbsp;&nbsp;<br>
+<br>
+<br><br>
+
+<button type="submit" class="btn btn-ptimary btn-block btn-large" style="height:30px;width:200px">Predict</button>
+    </form>
+<br>
+    <p style="font-size: 23px;"><span style="color:lime;">{{ prediction_text }}</span></p>
+    
+    <br>
+    <br>
+    </body>
+</html>
+    
+     
